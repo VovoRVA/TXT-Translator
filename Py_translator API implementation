@@ -1,17 +1,10 @@
 from py_translator import TEXTLIB 
-s = TEXTLIB().translator(is_html=False, text='Hello my friend', lang_to='cn', proxy=False) 
-print(s)
+with open('test.txt', 'r', encoding='utf-8') as f:
+    translated_t1 = TEXTLIB().translator(is_html=False, text=f.read(), lang_to='ru', proxy=False)
 
-# f = open("test.txt", "r") 
-# contents =f.read() 
-# # print(contents) 
-# 
-# trans_text = translator.translate(contents) 
-# print(trans_text) 
-# f.close() 
-# f2 = open("test2.txt", "w+") 
-# # for i in range(10): 
-# f2.write(trans_text) 
-# f2.close() 
-for line in f: 
+with open('test2.txt', 'w', encoding='utf-8') as n:
+    n.write(translated_t1)
+
+f.close()
+n.close()
 print(line)
