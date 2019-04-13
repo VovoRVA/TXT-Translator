@@ -1,10 +1,17 @@
-from py_translator import TEXTLIB 
-with open('test.txt', 'r', encoding='utf-8') as f:
-    translated_t1 = TEXTLIB().translator(is_html=False, text=f.read(), lang_to='ru', proxy=False)
+from py_translator import TEXTLIB
+import os
 
-with open('test2.txt', 'w', encoding='utf-8') as n:
-    n.write(translated_t1)
+for root, dirs, files in os.walk("way/way2/"):
+    for file in files:
+        if file.endswith(".txt"):
+             print(os.path.join(root))
+             print(os.path.join(file))
 
-f.close()
-n.close()
-print(line)
+             with open('test.txt', 'r', encoding='utf-8') as f:
+                 translated_t1 = TEXTLIB().translator(is_html=False, text=f.read(), lang_to='ru', proxy=False)
+
+             with open('test2.txt', 'w', encoding='utf-8') as n:
+                 n.write(translated_t1)
+
+             f.close()
+             n.close()
