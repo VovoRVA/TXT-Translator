@@ -10,7 +10,7 @@ for root, dirs, files in os.walk("way/way2/"):
              with open(file, 'r', encoding='utf-8') as f:
                  translated_t1 = TEXTLIB().translator(is_html=False, text=f.read(), lang_to='ru', proxy=False)
 
-             with open('test2.txt', 'w', encoding='utf-8') as n:
+             with open('translated ' + file, 'w+', encoding='utf-8') as n:
                  n.write(translated_t1)
 
              f.close()
