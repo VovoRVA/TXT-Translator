@@ -7,7 +7,7 @@ for root, dirs, files in os.walk("way/way2/"):
              print(os.path.join(root))
              print(os.path.join(file))
 
-             with open('test.txt', 'r', encoding='utf-8') as f:
+             with open(file, 'r', encoding='utf-8') as f:
                  translated_t1 = TEXTLIB().translator(is_html=False, text=f.read(), lang_to='ru', proxy=False)
 
              with open('test2.txt', 'w', encoding='utf-8') as n:
